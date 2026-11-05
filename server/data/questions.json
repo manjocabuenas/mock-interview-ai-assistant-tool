@@ -1,0 +1,1262 @@
+[
+  {
+    "id": "angular-e01",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What is Angular, and how is it different from AngularJS?",
+    "answer": "Angular (v2+) is a TypeScript-based, component-driven framework with dependency injection, a CLI and AOT compilation. AngularJS (1.x) was JavaScript-based, used controllers and $scope, and relied on the digest cycle."
+  },
+  {
+    "id": "angular-e02",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What is a component in Angular?",
+    "answer": "A component is a class decorated with @Component that controls a part of the UI. It has a selector, a template, optional styles and the logic that drives the view."
+  },
+  {
+    "id": "angular-e03",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What are the types of data binding in Angular?",
+    "answer": "Interpolation {{ }}, property binding [prop], event binding (event), and two-way binding [(ngModel)]. They connect the component class to the template."
+  },
+  {
+    "id": "angular-e04",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What is a directive, and what types exist?",
+    "answer": "A directive adds behavior to DOM elements. The types are components (directives with a template), structural directives that change the DOM layout (@if, @for, *ngIf), and attribute directives that change appearance or behavior (ngClass, ngStyle)."
+  },
+  {
+    "id": "angular-e05",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What is a service and what is dependency injection in Angular?",
+    "answer": "A service is a class that holds reusable logic or data, such as API calls. Dependency injection lets Angular create and supply that service to components via constructors or inject(), so classes stay loosely coupled and testable."
+  },
+  {
+    "id": "angular-e06",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What is the difference between NgModules and standalone components?",
+    "answer": "NgModules group declarations and imports. Standalone components declare their own imports directly, removing most module boilerplate, and are the default in modern Angular."
+  },
+  {
+    "id": "angular-e07",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "Name the main component lifecycle hooks and their order.",
+    "answer": "ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked and finally ngOnDestroy. ngOnInit is where initialization logic usually goes."
+  },
+  {
+    "id": "angular-e08",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What is a pipe in Angular?",
+    "answer": "A pipe transforms a value in a template, for example date, currency or async. You can write custom pipes with @Pipe, and pipes are pure by default."
+  },
+  {
+    "id": "angular-e09",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "How do @Input and @Output work?",
+    "answer": "@Input lets a parent pass data down to a child component. @Output exposes an EventEmitter so the child can send events up to the parent."
+  },
+  {
+    "id": "angular-e10",
+    "topic": "Angular",
+    "difficulty": "easy",
+    "text": "What is the Angular CLI and which commands do you use most?",
+    "answer": "A command-line tool for creating and managing Angular projects. Common commands are ng new, ng serve, ng generate, ng build and ng test."
+  },
+  {
+    "id": "angular-m01",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What is the difference between template-driven and reactive forms?",
+    "answer": "Template-driven forms use directives like ngModel and are simple but less testable. Reactive forms are built in code with FormGroup and FormControl, giving explicit control, easier validation and better testability."
+  },
+  {
+    "id": "angular-m02",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What is the difference between Observables and Promises?",
+    "answer": "A Promise handles a single future value, is eager and cannot be cancelled. An Observable can emit many values over time, is lazy until subscribed, can be cancelled and supports operators."
+  },
+  {
+    "id": "angular-m03",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "How does lazy loading work in Angular routing?",
+    "answer": "Routes use loadChildren or loadComponent with a dynamic import so a feature's code is split into its own bundle and downloaded only when the route is visited, reducing initial load time."
+  },
+  {
+    "id": "angular-m04",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What are route guards and resolvers?",
+    "answer": "Guards such as canActivate, canDeactivate and canMatch decide whether navigation is allowed. Resolvers fetch data before the route activates so the component has it on load. Modern Angular uses functional guards."
+  },
+  {
+    "id": "angular-m05",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What are HTTP interceptors and what are they used for?",
+    "answer": "Interceptors sit in the HttpClient pipeline and can modify requests or responses. Common uses are adding auth tokens, global error handling, logging and showing loaders."
+  },
+  {
+    "id": "angular-m06",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What is the difference between signals and RxJS observables?",
+    "answer": "Signals are synchronous reactive values that track dependencies automatically and suit UI state. Observables are lazy push-based streams suited to async events, cancellation and operators. toSignal and toObservable bridge them."
+  },
+  {
+    "id": "angular-m07",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What is the difference between Subject, BehaviorSubject and ReplaySubject?",
+    "answer": "A Subject multicasts to current subscribers only. BehaviorSubject needs an initial value and gives new subscribers the latest value. ReplaySubject replays a set number of past values to new subscribers."
+  },
+  {
+    "id": "angular-m08",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What is content projection and how do ViewChild and ContentChild differ?",
+    "answer": "Content projection uses ng-content to render parent-supplied markup inside a component. ViewChild queries elements in the component's own template, while ContentChild queries projected content."
+  },
+  {
+    "id": "angular-m09",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "How do you prevent memory leaks from subscriptions?",
+    "answer": "Use the async pipe, toSignal, takeUntilDestroyed or takeUntil with a destroy subject, or unsubscribe in ngOnDestroy. HttpClient calls complete on their own, but long-lived streams must be cleaned up."
+  },
+  {
+    "id": "angular-m10",
+    "topic": "Angular",
+    "difficulty": "medium",
+    "text": "What is the difference between the constructor and ngOnInit?",
+    "answer": "The constructor is a TypeScript feature used mainly for dependency injection. ngOnInit runs after Angular has set the inputs, so initialization logic that needs input values belongs there."
+  },
+  {
+    "id": "angular-h01",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "Explain change detection in Angular and how OnPush changes it.",
+    "answer": "Default strategy checks every component after each async event triggered via zone.js. OnPush checks a component only when an input reference changes, an event fires in it, an async pipe or signal it reads updates, or markForCheck is called. It reduces checks and rewards immutability."
+  },
+  {
+    "id": "angular-h02",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "How does zone.js work, and what does zoneless Angular change?",
+    "answer": "Zone.js patches async APIs so Angular knows when to run change detection. Zoneless Angular drops that patching and relies on signals, events and markForCheck to schedule updates, giving smaller bundles and more predictable rendering."
+  },
+  {
+    "id": "angular-h03",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "Explain Angular's dependency injection hierarchy and resolution modifiers.",
+    "answer": "Injectors form a tree: root, route or environment injectors, then element injectors on components. Lookup walks up the tree. Modifiers such as Optional, Self, SkipSelf and Host change where the lookup starts or stops. providedIn root gives a tree-shakable singleton."
+  },
+  {
+    "id": "angular-h04",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "How would you optimize the performance of a large Angular application?",
+    "answer": "Use OnPush and signals, track in @for, lazy load routes, use @defer for heavy parts, virtual scrolling for long lists, pure pipes, avoid heavy template functions, analyze bundles, and consider SSR with hydration."
+  },
+  {
+    "id": "angular-h05",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "What are SSR, hydration and @defer blocks?",
+    "answer": "SSR renders HTML on the server for faster first paint and SEO. Hydration reuses that DOM instead of rebuilding it on the client. @defer lazy loads parts of a template on triggers such as viewport entry, idle or interaction."
+  },
+  {
+    "id": "angular-h06",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "Compare switchMap, mergeMap, concatMap and exhaustMap with use cases.",
+    "answer": "switchMap cancels the previous inner stream (search typeahead). mergeMap runs inner streams in parallel (independent requests). concatMap queues them in order (sequential saves). exhaustMap ignores new triggers while one is running (login or submit button)."
+  },
+  {
+    "id": "angular-h07",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "How would you manage state in a large Angular application?",
+    "answer": "Start with services using signals or BehaviorSubjects. For complex shared state use a store such as NgRx or NgRx SignalStore with actions, reducers, selectors and effects. Choose by complexity, since a full store adds boilerplate."
+  },
+  {
+    "id": "angular-h08",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "What is the difference between AOT and JIT, and what is Ivy?",
+    "answer": "AOT compiles templates at build time, giving faster startup, earlier template errors and smaller bundles. JIT compiles in the browser. Ivy is the rendering and compilation engine that enables better tree-shaking and smaller bundles."
+  },
+  {
+    "id": "angular-h09",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "How do you build a custom form control with ControlValueAccessor?",
+    "answer": "Implement ControlValueAccessor with writeValue, registerOnChange, registerOnTouched and optionally setDisabledState, and provide it with NG_VALUE_ACCESSOR. This lets a custom component work with ngModel and reactive forms."
+  },
+  {
+    "id": "angular-h10",
+    "topic": "Angular",
+    "difficulty": "hard",
+    "text": "How does Angular protect against XSS, and what is DomSanitizer for?",
+    "answer": "Angular treats values as untrusted and sanitizes or escapes them in templates by default. DomSanitizer bypass methods mark content trusted but should be used sparingly. Also use HttpOnly cookies, CSRF protection and a content security policy."
+  },
+  {
+    "id": "aem-e01",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is Adobe Experience Manager (AEM) and what is it used for?",
+    "answer": "AEM is an enterprise content management platform for building and managing websites, digital assets, forms and personalized experiences. It combines a CMS, a DAM and tools for authoring and delivery."
+  },
+  {
+    "id": "aem-e02",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is the difference between the Author and Publish instances?",
+    "answer": "Author is where content is created, edited, reviewed and approved. Publish serves approved content to end users. Content is replicated from Author to Publish, typically behind a Dispatcher."
+  },
+  {
+    "id": "aem-e03",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What are the JCR and CRXDE Lite?",
+    "answer": "The JCR is the content repository, implemented by Apache Jackrabbit Oak, that stores content as a tree of nodes and properties. CRXDE Lite is a browser tool to view and edit that repository."
+  },
+  {
+    "id": "aem-e04",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is the difference between editable templates and static templates?",
+    "answer": "Static templates are developer-defined under /apps and are rigid. Editable templates are created by authors or power users in the Template Editor, with structure, initial content and policies stored under /conf."
+  },
+  {
+    "id": "aem-e05",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is a component in AEM and what are its core parts?",
+    "answer": "A reusable building block stored under /apps. It usually has an HTL script, a dialog for authors, and optionally a Sling Model, client libraries and an edit configuration."
+  },
+  {
+    "id": "aem-e06",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is HTL (Sightly)?",
+    "answer": "HTL is AEM's secure, readable templating language that replaces JSP. It uses data-sly attributes, ${} expressions and context-aware escaping to reduce XSS risk."
+  },
+  {
+    "id": "aem-e07",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What are AEM Core Components?",
+    "answer": "A set of production-ready, versioned, Adobe-maintained components such as Text, Image, Teaser and Navigation. You extend them through proxy components instead of copying code."
+  },
+  {
+    "id": "aem-e08",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is the DAM in AEM?",
+    "answer": "The Digital Asset Manager stores and manages images, videos and documents with metadata, renditions, workflows and tagging, and serves assets to pages."
+  },
+  {
+    "id": "aem-e09",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is OSGi and how does AEM use it?",
+    "answer": "OSGi is a modular Java framework (Apache Felix in AEM). AEM's functionality is delivered as bundles and services that can be started, stopped and configured at runtime through the Web Console."
+  },
+  {
+    "id": "aem-e10",
+    "topic": "AEM",
+    "difficulty": "easy",
+    "text": "What is the difference between Touch UI and Classic UI?",
+    "answer": "Touch UI is the modern HTML5 and Granite-based interface that works on desktop and touch devices and is the standard. Classic UI is the older ExtJS-based interface that is deprecated."
+  },
+  {
+    "id": "aem-m01",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "What is the difference between Sling Models and WCMUsePojo?",
+    "answer": "Sling Models are annotation-driven POJOs injected from resources or requests and used from HTL via data-sly-use. They are the recommended approach. WCMUsePojo is a legacy HTL use-class base that needs manual API calls."
+  },
+  {
+    "id": "aem-m02",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "What is the role of the Dispatcher in AEM?",
+    "answer": "Dispatcher is AEM's caching and load-balancing module in front of Publish. It caches pages and assets on the web server, filters requests for security and is invalidated through flush requests on activation."
+  },
+  {
+    "id": "aem-m03",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "How do OSGi services and configurations work in AEM?",
+    "answer": "Services are Java classes annotated with OSGi Declarative Services annotations such as @Component and @Reference. Configurations are supplied as OSGi config files, which can be scoped per run mode, and read through @Designate or the Web Console."
+  },
+  {
+    "id": "aem-m04",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "What are run modes and how are they used?",
+    "answer": "Run modes such as author, publish, dev, stage and prod let you load different configurations and content per environment. Configuration folders are named like config.author.prod."
+  },
+  {
+    "id": "aem-m05",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "How does content replication or distribution work from Author to Publish?",
+    "answer": "Activating a page triggers replication agents (or Sling Content Distribution on AEM Cloud Service) to send content to Publish, and a flush agent invalidates the Dispatcher cache. Deactivation removes it."
+  },
+  {
+    "id": "aem-m06",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "What are client libraries (clientlibs) and how do you use categories, embed and dependencies?",
+    "answer": "Clientlibs organize CSS and JS under /apps or /etc. Categories identify them, dependencies load other libraries first, and embed inlines other libraries into one file. AEM minifies and concatenates them."
+  },
+  {
+    "id": "aem-m07",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "How do you register a Sling servlet and why is resource type registration preferred?",
+    "answer": "Use @Component with sling.servlet.resourceTypes (or paths). Resource-type registration is preferred because it works with access control on the resource, is more flexible and avoids path-based security issues."
+  },
+  {
+    "id": "aem-m08",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "What are AEM workflows and what are their main parts?",
+    "answer": "Workflows automate processes. A model contains steps (process, participant, and so on), launchers start workflows on content events, and custom process steps are OSGi services implementing WorkflowProcess."
+  },
+  {
+    "id": "aem-m09",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "What is the difference between Experience Fragments and Content Fragments?",
+    "answer": "Content Fragments are structured, channel-neutral content based on models, good for headless delivery. Experience Fragments are reusable groups of components with layout that deliver a complete experience across channels."
+  },
+  {
+    "id": "aem-m10",
+    "topic": "AEM",
+    "difficulty": "medium",
+    "text": "How do proxy components and sling:resourceSuperType work?",
+    "answer": "A proxy component has little code and sets sling:resourceSuperType to a Core Component, inheriting its behavior. Resource super type lets one component inherit scripts and dialogs from another, which you can override."
+  },
+  {
+    "id": "aem-h01",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How does Sling resolve a URL to a resource and then to a script?",
+    "answer": "Sling maps the URL to a resource path via the resource resolver and mappings. It then uses sling:resourceType, selectors, extension and HTTP method to find the best-matching script, walking up sling:resourceSuperType when needed."
+  },
+  {
+    "id": "aem-h02",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How does AEM as a Cloud Service differ from AEM 6.5 on-premise?",
+    "answer": "Cloud Service is containerized and auto-scaling with Cloud Manager CI/CD pipelines, immutable /apps and /libs at runtime, repoinit for structure, Sling Content Distribution instead of replication agents, and automatic updates."
+  },
+  {
+    "id": "aem-h03",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How do Oak indexes work and how do you troubleshoot slow queries?",
+    "answer": "Oak uses property and Lucene full-text indexes defined under /oak:index. Use the Query Performance tool and explain query to find traversals, add or tune custom indexes, and avoid unindexed queries on large repositories."
+  },
+  {
+    "id": "aem-h04",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How would you design a caching strategy for a high-traffic AEM site?",
+    "answer": "Cache aggressively at the CDN and Dispatcher with sensible TTLs and invalidation rules, use statfiles or TTL-based invalidation, keep personalization client-side or via ESI, set proper headers, and avoid uncacheable URLs such as query strings."
+  },
+  {
+    "id": "aem-h05",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How do you secure an AEM instance?",
+    "answer": "Follow the security checklist: use service users via ServiceResourceResolver instead of admin sessions, lock down ACLs, restrict the Dispatcher with filters, block the Web Console and CRXDE on Publish, enable CSRF and CORS settings and keep patches current."
+  },
+  {
+    "id": "aem-h06",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How would you design a multi-site, multi-language AEM architecture?",
+    "answer": "Use language-root structures per locale, translation workflows with integrations, MSM Blueprints and Live Copies to share and roll out content, shared templates, clientlibs and Experience Fragments, and clear content ownership."
+  },
+  {
+    "id": "aem-h07",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "What is the difference between Sling Jobs and event handlers, and when would you use each?",
+    "answer": "Event handlers react to events immediately and may lose them on failure. Sling Jobs are persisted, guaranteed to run at least once, retried on failure and can be cluster-aware, so use jobs for work that must complete."
+  },
+  {
+    "id": "aem-h08",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How do you diagnose slow performance or high memory usage on an AEM instance?",
+    "answer": "Check logs, thread dumps and heap dumps, the Operations dashboard, and request logs. Look for unindexed queries, runaway workflows or jobs, and run datastore garbage collection and revision cleanup on instances where they apply."
+  },
+  {
+    "id": "aem-h09",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How is an AEM project structured and how are code and content deployed?",
+    "answer": "A Maven archetype project has ui.apps, ui.content, ui.config, core, ui.frontend and dispatcher modules deployed as content packages. Immutable content (/apps) is separated from mutable content, and repoinit defines baseline structure and permissions."
+  },
+  {
+    "id": "aem-h10",
+    "topic": "AEM",
+    "difficulty": "hard",
+    "text": "How does headless AEM work with Content Fragments and GraphQL?",
+    "answer": "Content Fragment Models define structured content that is exposed through the GraphQL API. Persistent queries are cached on the CDN, and the SPA or app fetches JSON, while the SPA Editor supports in-context authoring for React or Angular."
+  },
+  {
+    "id": "java-e01",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What is the difference between JDK, JRE and JVM?",
+    "answer": "The JVM runs bytecode, the JRE is the JVM plus core libraries needed to run applications, and the JDK is the JRE plus development tools such as the compiler (javac)."
+  },
+  {
+    "id": "java-e02",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What is the difference between an interface and an abstract class?",
+    "answer": "An interface defines a contract (with default and static methods since Java 8) and a class can implement many. An abstract class can hold state and constructors and allows partial implementation, but a class can extend only one."
+  },
+  {
+    "id": "java-e03",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What is the difference between == and equals()?",
+    "answer": "== compares primitive values or object references, while equals() compares logical equality and can be overridden. Strings should be compared with equals()."
+  },
+  {
+    "id": "java-e04",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "Why are Strings immutable and what is the difference between String, StringBuilder and StringBuffer?",
+    "answer": "Immutability allows the string pool, caching of hash codes and thread safety. StringBuilder is mutable and fast but not thread-safe. StringBuffer is mutable and synchronized."
+  },
+  {
+    "id": "java-e05",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What are the four principles of OOP?",
+    "answer": "Encapsulation, inheritance, polymorphism and abstraction."
+  },
+  {
+    "id": "java-e06",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What is the difference between final, finally and finalize?",
+    "answer": "final makes a variable constant, a method non-overridable or a class non-inheritable. finally is a block that runs after try/catch for cleanup. finalize was an object cleanup hook that is deprecated."
+  },
+  {
+    "id": "java-e07",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What is the difference between checked and unchecked exceptions?",
+    "answer": "Checked exceptions (such as IOException) must be declared or caught at compile time. Unchecked exceptions extend RuntimeException (such as NullPointerException) and are not enforced by the compiler."
+  },
+  {
+    "id": "java-e08",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What is the difference between ArrayList and LinkedList?",
+    "answer": "ArrayList is backed by an array with fast random access and slower middle insertions. LinkedList is a doubly linked list with fast insertion and removal at known nodes but slow indexed access."
+  },
+  {
+    "id": "java-e09",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What is the difference between method overloading and overriding?",
+    "answer": "Overloading is the same method name with different parameters in the same class, resolved at compile time. Overriding redefines a superclass method in a subclass with the same signature, resolved at runtime."
+  },
+  {
+    "id": "java-e10",
+    "topic": "Java",
+    "difficulty": "easy",
+    "text": "What do the static keyword and the access modifiers do?",
+    "answer": "static members belong to the class instead of instances. The access modifiers are public (everywhere), protected (package and subclasses), default (package) and private (class only)."
+  },
+  {
+    "id": "java-m01",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What is the difference between HashMap and ConcurrentHashMap?",
+    "answer": "HashMap isn't thread-safe and allows one null key and null values. ConcurrentHashMap is thread-safe with fine-grained locking and CAS, disallows null keys and values, and has weakly consistent iterators."
+  },
+  {
+    "id": "java-m02",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "How does a HashMap work internally?",
+    "answer": "It hashes the key to find a bucket in an array, handles collisions with linked lists that convert to red-black trees at a threshold (8), and resizes when the load factor (0.75) is exceeded."
+  },
+  {
+    "id": "java-m03",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What is the contract between equals() and hashCode()?",
+    "answer": "Equal objects must have equal hash codes. If you override equals() you must override hashCode(), otherwise hash-based collections like HashMap and HashSet behave incorrectly."
+  },
+  {
+    "id": "java-m04",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What is the difference between map and flatMap in Streams?",
+    "answer": "map transforms each element into one result. flatMap transforms each element into a stream and flattens them into a single stream. Streams are lazy and run when a terminal operation is called."
+  },
+  {
+    "id": "java-m05",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "How should Optional be used in Java?",
+    "answer": "Use it as a return type to signal a possibly absent value with methods like map, orElse and orElseThrow. Avoid it for fields, parameters or collections, and don't call get() without checking."
+  },
+  {
+    "id": "java-m06",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What is the difference between synchronized and volatile?",
+    "answer": "synchronized provides mutual exclusion and visibility for a block or method. volatile guarantees visibility and ordering of a single variable but not atomicity of compound actions."
+  },
+  {
+    "id": "java-m07",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What is the difference between Comparable and Comparator?",
+    "answer": "Comparable defines a class's natural ordering via compareTo. Comparator defines external, custom orderings via compare and can be composed with Comparator.comparing."
+  },
+  {
+    "id": "java-m08",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What is try-with-resources?",
+    "answer": "It automatically closes resources that implement AutoCloseable at the end of the block, even on exceptions, and replaces verbose finally blocks. Suppressed exceptions are preserved."
+  },
+  {
+    "id": "java-m09",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What are generics and what is type erasure?",
+    "answer": "Generics provide compile-time type safety. Type information is erased at runtime, so you can't do new T() or instanceof on a parameterized type. Wildcards (? extends, ? super) add flexibility."
+  },
+  {
+    "id": "java-m10",
+    "topic": "Java",
+    "difficulty": "medium",
+    "text": "What modern Java features (records, sealed classes, var, text blocks) should a developer know?",
+    "answer": "Records are concise immutable data carriers. Sealed classes restrict subclasses, var infers local types, text blocks hold multi-line strings, and switch expressions and pattern matching reduce boilerplate."
+  },
+  {
+    "id": "java-h01",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "Explain how garbage collection works in the JVM at a high level.",
+    "answer": "The JVM reclaims heap objects no longer reachable from GC roots. The heap is generational (young and old). Minor GCs collect young objects and promote survivors, while old-generation work is done by major or mixed collections. G1 and ZGC trade throughput against pause time."
+  },
+  {
+    "id": "java-h02",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "What is the Java Memory Model and the happens-before relationship?",
+    "answer": "The JMM defines when writes by one thread become visible to others. Happens-before rules such as synchronized unlock-before-lock, volatile write-before-read and thread start and join guarantee ordering and visibility."
+  },
+  {
+    "id": "java-h03",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "What causes a deadlock, and how do you prevent and detect it?",
+    "answer": "Threads wait on each other's locks in a cycle. Prevent it with consistent lock ordering, timeouts with tryLock, and fewer or finer locks. Detect it with thread dumps (jstack) or ThreadMXBean."
+  },
+  {
+    "id": "java-h04",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "How do CompletableFuture and virtual threads change concurrency in Java?",
+    "answer": "CompletableFuture composes async tasks without blocking via thenApply, thenCompose and allOf. Virtual threads (Java 21) are cheap, JVM-scheduled threads that let you write simple blocking code at high scale."
+  },
+  {
+    "id": "java-h05",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "How does class loading work and what is the parent delegation model?",
+    "answer": "The bootstrap, platform and application class loaders load classes lazily. A loader first delegates to its parent, only loading the class itself if the parent can't, which prevents core classes from being replaced."
+  },
+  {
+    "id": "java-h06",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "What are common causes of memory leaks in Java and how do you diagnose them?",
+    "answer": "Static collections that keep growing, unclosed resources, listeners never removed, ThreadLocals in pools and caches without eviction. Diagnose with heap dumps, Eclipse MAT or VisualVM and by watching old-generation growth."
+  },
+  {
+    "id": "java-h07",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "How do you implement a thread-safe singleton?",
+    "answer": "Use an enum singleton, the initialization-on-demand holder idiom, or double-checked locking with a volatile field. The holder idiom and enums are simplest and safe."
+  },
+  {
+    "id": "java-h08",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "How does ConcurrentHashMap achieve thread safety internally (Java 8+)?",
+    "answer": "It uses CAS for empty bins and synchronizes on the first node of a bin for updates, allowing concurrent operations on different bins. Resizing is done cooperatively by multiple threads."
+  },
+  {
+    "id": "java-h09",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "What do the JIT compiler, tiered compilation and escape analysis do?",
+    "answer": "The JIT compiles hot bytecode to native code at runtime. Tiered compilation moves from the interpreter through C1 to C2 with profiling. Escape analysis lets the JVM avoid heap allocation or locks for objects that don't escape."
+  },
+  {
+    "id": "java-h10",
+    "topic": "Java",
+    "difficulty": "hard",
+    "text": "What are strong, soft, weak and phantom references?",
+    "answer": "Strong references prevent collection. Soft references are cleared under memory pressure (caches), weak ones at the next GC (WeakHashMap), and phantom references signal that an object has been finalized, used with a ReferenceQueue for cleanup."
+  },
+  {
+    "id": "react-e01",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "What is React and what is the virtual DOM?",
+    "answer": "React is a JavaScript library for building UIs from components. The virtual DOM is an in-memory representation of the UI that React diffs against the previous one to update only the real DOM nodes that changed."
+  },
+  {
+    "id": "react-e02",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "What is JSX?",
+    "answer": "A syntax extension that lets you write HTML-like markup in JavaScript. It is compiled to React.createElement or jsx calls and must return a single root element or fragment."
+  },
+  {
+    "id": "react-e03",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "What are props and state, and how do they differ?",
+    "answer": "Props are read-only inputs passed from a parent. State is data owned by a component that can change and triggers a re-render when updated."
+  },
+  {
+    "id": "react-e04",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "What is the difference between functional and class components?",
+    "answer": "Functional components are functions that use hooks for state and lifecycle behavior. Class components use this.state and lifecycle methods. Functional components are the modern standard."
+  },
+  {
+    "id": "react-e05",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "What are hooks and what are the rules of hooks?",
+    "answer": "Hooks let function components use state and other React features, such as useState and useEffect. Call them only at the top level and only from React functions or custom hooks."
+  },
+  {
+    "id": "react-e06",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "Why are keys needed when rendering lists?",
+    "answer": "Keys help React identify which items changed, were added or removed, so it can reuse DOM nodes correctly. They should be stable and unique among siblings, not array indexes for dynamic lists."
+  },
+  {
+    "id": "react-e07",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "What is the difference between controlled and uncontrolled components?",
+    "answer": "A controlled component's form value is held in React state and updated by onChange. An uncontrolled component keeps its value in the DOM and is read via a ref."
+  },
+  {
+    "id": "react-e08",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "How do you do conditional rendering in React?",
+    "answer": "Use ternaries, && short-circuiting, early returns or variables holding JSX. Be careful that 0 with && renders 0."
+  },
+  {
+    "id": "react-e09",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "What does lifting state up mean?",
+    "answer": "Moving shared state to the closest common parent and passing it down via props, so sibling components stay in sync."
+  },
+  {
+    "id": "react-e10",
+    "topic": "React JS",
+    "difficulty": "easy",
+    "text": "How are events handled in React?",
+    "answer": "Using camelCase props like onClick with function handlers. React wraps native events in synthetic events and you call event.preventDefault() to stop default behavior."
+  },
+  {
+    "id": "react-m01",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "What is the difference between useEffect and useLayoutEffect?",
+    "answer": "useEffect runs after paint, asynchronously. useLayoutEffect runs synchronously after DOM mutations but before paint, and is used for layout measurement and avoiding flicker."
+  },
+  {
+    "id": "react-m02",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "How does the useEffect dependency array and cleanup work?",
+    "answer": "The effect re-runs when a listed dependency changes. An empty array runs it once on mount, and no array runs it every render. The returned cleanup function runs before the next effect and on unmount."
+  },
+  {
+    "id": "react-m03",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "What is the difference between useMemo, useCallback and React.memo?",
+    "answer": "useMemo caches a computed value, useCallback caches a function reference, and React.memo skips re-rendering a component if its props are unchanged. They only help if used where rendering is genuinely costly."
+  },
+  {
+    "id": "react-m04",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "What is the Context API and when would you prefer Redux or similar?",
+    "answer": "Context passes data through the tree without prop drilling, but all consumers re-render on change. Use a state library when you need complex updates, middleware, devtools or fine-grained subscriptions."
+  },
+  {
+    "id": "react-m05",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "What are the uses of useRef?",
+    "answer": "Accessing DOM elements, and storing mutable values that persist across renders without causing re-renders, such as timers or previous values."
+  },
+  {
+    "id": "react-m06",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "What are custom hooks and why use them?",
+    "answer": "Functions starting with use that compose other hooks to share stateful logic between components, such as useFetch or useDebounce, without changing component hierarchy."
+  },
+  {
+    "id": "react-m07",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "What are error boundaries?",
+    "answer": "Class components that catch rendering errors in their child tree using getDerivedStateFromError and componentDidCatch, and show a fallback UI. They don't catch event handler or async errors."
+  },
+  {
+    "id": "react-m08",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "How do React.lazy and Suspense support code splitting?",
+    "answer": "React.lazy loads a component through dynamic import, and Suspense shows a fallback while the chunk loads. Typically used per route to reduce the initial bundle."
+  },
+  {
+    "id": "react-m09",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "When would you use useReducer instead of useState?",
+    "answer": "When state has multiple related values or complex update logic, because a reducer centralizes transitions and is easier to test."
+  },
+  {
+    "id": "react-m10",
+    "topic": "React JS",
+    "difficulty": "medium",
+    "text": "How does Redux work and what does Redux Toolkit simplify?",
+    "answer": "The store holds state, actions describe changes, and reducers compute the new state in one direction. Redux Toolkit reduces boilerplate with createSlice, Immer-based updates and RTK Query."
+  },
+  {
+    "id": "react-h01",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "How does React's reconciliation and the key prop work?",
+    "answer": "React diffs the new element tree against the old, assuming different element types produce different trees. Keys identify list items across renders so React can reorder instead of recreate them."
+  },
+  {
+    "id": "react-h02",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "What is React Fiber and how does concurrent rendering work?",
+    "answer": "Fiber is the reconciler architecture that splits rendering into interruptible units. Concurrent features such as useTransition and useDeferredValue let React keep urgent updates responsive while deferring non-urgent ones."
+  },
+  {
+    "id": "react-h03",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "How would you prevent unnecessary re-renders in a large React app?",
+    "answer": "Colocate state, split components, use React.memo with stable props, memoize with useMemo and useCallback where it matters, avoid new object or function props, use selectors, virtualize long lists and profile with the React DevTools Profiler."
+  },
+  {
+    "id": "react-h04",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "What is a stale closure in hooks and how do you avoid it?",
+    "answer": "A callback captures old state or props from a past render. Avoid it with correct dependency arrays, functional state updates like setX(prev => ...), or refs holding the latest value."
+  },
+  {
+    "id": "react-h05",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "What are SSR, hydration and React Server Components?",
+    "answer": "SSR renders HTML on the server, and hydration attaches event handlers on the client. Server Components render only on the server, send no JS for themselves and can access data directly, reducing bundle size."
+  },
+  {
+    "id": "react-h06",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "How do you manage server state versus client state?",
+    "answer": "Server state, such as fetched data, needs caching, deduplication, refetching and invalidation, which libraries like React Query or SWR handle. Client or UI state stays in useState, context or a small store."
+  },
+  {
+    "id": "react-h07",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "How do you profile and improve rendering performance?",
+    "answer": "Use the React Profiler to find slow or frequently rendering components, then reduce work with memoization, virtualization, code splitting and moving expensive work off the main thread. Measure before and after."
+  },
+  {
+    "id": "react-h08",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "How does automatic batching in React 18 work?",
+    "answer": "React 18 batches multiple state updates into a single re-render even inside promises, timeouts and native event handlers, not just React events. flushSync opts out."
+  },
+  {
+    "id": "react-h09",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "How do you test React components?",
+    "answer": "Use Jest or Vitest with React Testing Library to test behavior the way users interact with it, mock network calls, test custom hooks with renderHook, and cover critical flows with end-to-end tests such as Playwright."
+  },
+  {
+    "id": "react-h10",
+    "topic": "React JS",
+    "difficulty": "hard",
+    "text": "How do you avoid race conditions in data fetching inside useEffect, and why do effects run twice in Strict Mode?",
+    "answer": "Use an AbortController or an ignore flag in the cleanup so stale responses are discarded. Strict Mode in development mounts, unmounts and remounts to surface missing cleanup logic. Effects should be idempotent."
+  },
+  {
+    "id": "node-e01",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "What is Node.js and why is it described as non-blocking and single-threaded?",
+    "answer": "Node.js is a JavaScript runtime built on V8. JavaScript runs on a single thread, and I/O is delegated to the system or libuv with callbacks, so it can handle many connections without blocking."
+  },
+  {
+    "id": "node-e02",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "What are npm and package.json?",
+    "answer": "npm is the package manager and registry. package.json describes the project, its scripts, and its dependencies (needed at runtime) and devDependencies (only for development)."
+  },
+  {
+    "id": "node-e03",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "What is the difference between CommonJS and ES modules?",
+    "answer": "CommonJS uses require and module.exports and loads synchronously. ES modules use import and export, are statically analyzable, support top-level await and are enabled with type module or .mjs."
+  },
+  {
+    "id": "node-e04",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "What is Express and what is middleware?",
+    "answer": "Express is a minimal web framework. Middleware are functions with access to req, res and next that run in order to handle logging, parsing, authentication and errors."
+  },
+  {
+    "id": "node-e05",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "What is the difference between callbacks, Promises and async/await?",
+    "answer": "Callbacks are functions called on completion and can lead to nesting. Promises represent a future value and chain with then. async/await is syntax over Promises that reads like synchronous code."
+  },
+  {
+    "id": "node-e06",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "How do you manage environment variables in Node.js?",
+    "answer": "Read them from process.env, and use a .env file with dotenv or the --env-file flag for local development. Never commit secrets."
+  },
+  {
+    "id": "node-e07",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "Name some core Node.js modules.",
+    "answer": "fs for files, path, http and https, events, os, crypto, stream and util."
+  },
+  {
+    "id": "node-e08",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "What are the HTTP methods in a REST API and how do you define routes in Express?",
+    "answer": "GET reads, POST creates, PUT or PATCH updates, DELETE removes. In Express, use app.get, app.post and so on with a path and handler, and express.json() to parse bodies."
+  },
+  {
+    "id": "node-e09",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "How do require and module.exports work?",
+    "answer": "require loads and caches a module, and module.exports defines what the module exposes. Each file is its own module scope."
+  },
+  {
+    "id": "node-e10",
+    "topic": "Node.js",
+    "difficulty": "easy",
+    "text": "What is the difference between blocking and non-blocking code?",
+    "answer": "Blocking code, such as fs.readFileSync, halts the event loop until finished. Non-blocking code starts the operation and continues, handling the result later via callback or Promise."
+  },
+  {
+    "id": "node-m01",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "Explain the Node.js event loop and its phases.",
+    "answer": "The event loop processes timers, pending callbacks, idle and prepare, poll (I/O), check (setImmediate) and close callbacks. Between phases, microtasks such as nextTick and Promise callbacks are processed."
+  },
+  {
+    "id": "node-m02",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "What is the difference between process.nextTick, setImmediate and Promise microtasks?",
+    "answer": "process.nextTick runs before other microtasks right after the current operation. Promise callbacks are microtasks. setImmediate runs in the check phase after I/O. setTimeout 0 runs in the timers phase."
+  },
+  {
+    "id": "node-m03",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "What are streams and why are they useful?",
+    "answer": "Streams process data in chunks (readable, writable, duplex and transform), keeping memory low for large files or network data. pipe and pipeline connect them and handle backpressure."
+  },
+  {
+    "id": "node-m04",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "What is EventEmitter?",
+    "answer": "A core class for the publish-subscribe pattern. Objects emit named events with emit and listeners subscribe with on or once. Many Node APIs, such as streams and servers, extend it."
+  },
+  {
+    "id": "node-m05",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "How do you handle errors in Express, including async code?",
+    "answer": "Use error-handling middleware with four arguments (err, req, res, next). Pass errors to next(err), or use async wrappers or Express 5's native promise support. Also handle unhandledRejection and uncaughtException at process level."
+  },
+  {
+    "id": "node-m06",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "How do JWT authentication and sessions differ?",
+    "answer": "Sessions store state on the server and send a session ID cookie. JWTs are signed self-contained tokens the client sends with each request, which scale statelessly but are harder to revoke. Use short expiry and refresh tokens."
+  },
+  {
+    "id": "node-m07",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "What is the difference between cluster, worker_threads and child_process?",
+    "answer": "cluster forks multiple processes sharing a server port to use all CPU cores. worker_threads run JavaScript in threads for CPU-bound work and can share memory. child_process spawns separate programs or processes."
+  },
+  {
+    "id": "node-m08",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "What are the basic security measures for a Node.js API?",
+    "answer": "Use helmet for headers, a CORS allow list, rate limiting, input validation, parameterized queries, hashed passwords with bcrypt or argon2, HTTPS, and keep dependencies updated."
+  },
+  {
+    "id": "node-m09",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "How do you work with databases safely, including pooling and injection?",
+    "answer": "Use a driver or ORM with a connection pool, parameterized queries or prepared statements to prevent SQL injection, sanitize NoSQL operators, and handle connection errors and timeouts."
+  },
+  {
+    "id": "node-m10",
+    "topic": "Node.js",
+    "difficulty": "medium",
+    "text": "How do you test a Node.js API?",
+    "answer": "Use Jest, Vitest or Mocha for unit tests with mocks, and supertest for HTTP-level tests against the app. Separate app creation from app.listen to make testing easy."
+  },
+  {
+    "id": "node-h01",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "How would you scale a Node.js application?",
+    "answer": "Keep services stateless, run multiple instances with cluster or containers behind a load balancer, cache with Redis, move heavy work to queues and workers, scale the database with replicas and indexes, and monitor everything."
+  },
+  {
+    "id": "node-h02",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "How do you find and fix a memory leak in Node.js?",
+    "answer": "Watch heap usage over time, take heap snapshots with Chrome DevTools or --inspect, and compare them. Typical causes are unbounded caches, global arrays, forgotten listeners and closures holding references."
+  },
+  {
+    "id": "node-h03",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "What happens if you run CPU-intensive code on the event loop and how do you handle it?",
+    "answer": "It blocks all other requests. Offload to worker_threads, a child process or a separate service or queue, break work into chunks, or use native or streaming approaches."
+  },
+  {
+    "id": "node-h04",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "What is libuv and the thread pool, and which operations use it?",
+    "answer": "libuv provides the event loop and a thread pool (default 4 threads) for operations without native async support, such as fs, dns.lookup, crypto and zlib. Network I/O uses OS async mechanisms. UV_THREADPOOL_SIZE adjusts it."
+  },
+  {
+    "id": "node-h05",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "How do you implement graceful shutdown?",
+    "answer": "Handle SIGTERM and SIGINT, stop accepting new connections with server.close, finish in-flight requests, close database and queue connections, set a timeout and exit. Expose health and readiness endpoints for orchestrators."
+  },
+  {
+    "id": "node-h06",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "How would you design a rate limiter or make an API idempotent?",
+    "answer": "Rate limit with a token bucket or sliding window stored in Redis keyed by user or IP. For idempotency, accept an idempotency key and store the result so retried requests return the same response without repeating side effects."
+  },
+  {
+    "id": "node-h07",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "How do services communicate in a Node.js microservice architecture and how do you make that reliable?",
+    "answer": "Synchronous via REST or gRPC and asynchronous via message brokers such as Kafka, RabbitMQ or SQS. Add timeouts, retries with backoff, circuit breakers, idempotent consumers and dead-letter queues."
+  },
+  {
+    "id": "node-h08",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "What are common Node.js security risks beyond the basics?",
+    "answer": "Prototype pollution, ReDoS from bad regexes, vulnerable or malicious dependencies (use npm audit and lockfiles), command injection via child_process, path traversal and leaking secrets in logs."
+  },
+  {
+    "id": "node-h09",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "How do you profile and debug performance problems in production Node.js?",
+    "answer": "Use --prof or --cpu-prof, clinic.js or 0x flame graphs, the inspector, APM tools, event loop lag metrics, and structured logging with request tracing."
+  },
+  {
+    "id": "node-h10",
+    "topic": "Node.js",
+    "difficulty": "hard",
+    "text": "How would you build a reliable background job system?",
+    "answer": "Use a queue such as BullMQ with Redis or SQS with separate workers, with retries and backoff, idempotent jobs, concurrency limits, a dead-letter queue, scheduling and monitoring."
+  },
+  {
+    "id": "ts-e01",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What is TypeScript and what are its benefits over JavaScript?",
+    "answer": "TypeScript is a typed superset of JavaScript that compiles to JavaScript. It catches errors at compile time, improves editor tooling and refactoring, and makes large codebases easier to maintain."
+  },
+  {
+    "id": "ts-e02",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What are the basic types in TypeScript?",
+    "answer": "string, number, boolean, null, undefined, bigint, symbol, arrays, tuples, enums, any, unknown, void and never."
+  },
+  {
+    "id": "ts-e03",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What is the difference between an interface and a type alias?",
+    "answer": "Both describe object shapes. Interfaces can be extended and merged through declaration merging. Type aliases can also name unions, intersections and primitives."
+  },
+  {
+    "id": "ts-e04",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What is the difference between any, unknown and never?",
+    "answer": "any disables type checking. unknown is a type-safe any that must be narrowed before use. never is for values that never occur, such as a function that always throws."
+  },
+  {
+    "id": "ts-e05",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "How do optional and readonly properties work?",
+    "answer": "A question mark makes a property optional, so its type includes undefined. readonly prevents reassignment after initialization, enforced at compile time only."
+  },
+  {
+    "id": "ts-e06",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What are enums in TypeScript?",
+    "answer": "Named sets of constants, numeric or string. Regular enums generate runtime code, while const enums are inlined. String literal unions are a common lightweight alternative."
+  },
+  {
+    "id": "ts-e07",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What are union and intersection types?",
+    "answer": "A union (A | B) allows one of several types. An intersection (A & B) combines types into one that has all members."
+  },
+  {
+    "id": "ts-e08",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What is type inference and when should you add annotations?",
+    "answer": "The compiler infers types from values and context. Annotate function parameters, public APIs and cases where inference is too broad or can't determine the type."
+  },
+  {
+    "id": "ts-e09",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "How do classes work in TypeScript and what are access modifiers?",
+    "answer": "Classes support constructors, inheritance, abstract classes and interfaces. public, private and protected control access at compile time, and parameter properties shorten constructors."
+  },
+  {
+    "id": "ts-e10",
+    "topic": "TypeScript",
+    "difficulty": "easy",
+    "text": "What does tsconfig.json do and what are important options?",
+    "answer": "It configures the compiler and project. Key options are target, module, strict, outDir, rootDir, include and exclude, and esModuleInterop."
+  },
+  {
+    "id": "ts-m01",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What are generics and why are they useful?",
+    "answer": "Generics let functions, classes and types work with many types while preserving type information, such as function identity<T>(x: T): T. Constraints with extends limit what T can be."
+  },
+  {
+    "id": "ts-m02",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What are the common utility types?",
+    "answer": "Partial, Required, Readonly, Pick, Omit, Record, Exclude, Extract, NonNullable, ReturnType and Parameters. They transform existing types without rewriting them."
+  },
+  {
+    "id": "ts-m03",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What are type guards and narrowing?",
+    "answer": "Techniques that narrow a type within a code block: typeof, instanceof, the in operator, equality checks and user-defined guards using a predicate such as x is Foo."
+  },
+  {
+    "id": "ts-m04",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What is declaration merging and how do interfaces differ from type aliases there?",
+    "answer": "Interfaces with the same name merge into one, which is useful for augmenting libraries. Type aliases cannot be redeclared. Prefer interfaces for public object shapes and types for unions."
+  },
+  {
+    "id": "ts-m05",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What are discriminated unions?",
+    "answer": "Union types where each member has a common literal property (the discriminant), such as kind. Checking it narrows the type and enables exhaustive switch statements with a never check."
+  },
+  {
+    "id": "ts-m06",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What are literal types and const assertions?",
+    "answer": "Literal types restrict a value to specific constants like 'GET'. as const makes values deeply readonly and infers the narrowest literal types, useful for config objects."
+  },
+  {
+    "id": "ts-m07",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What do keyof, typeof and indexed access types do?",
+    "answer": "keyof produces a union of an object's keys, typeof in a type position gets a value's type, and T[K] looks up the type of a property."
+  },
+  {
+    "id": "ts-m08",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "How do function overloads and optional or rest parameters work?",
+    "answer": "Overloads declare multiple call signatures above a single implementation. Optional parameters use ?, default values use =, and rest parameters collect extra arguments in a typed array."
+  },
+  {
+    "id": "ts-m09",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "What are .d.ts files and DefinitelyTyped?",
+    "answer": "Declaration files describe the types of JavaScript code. DefinitelyTyped is the community repository of types published as @types packages."
+  },
+  {
+    "id": "ts-m10",
+    "topic": "TypeScript",
+    "difficulty": "medium",
+    "text": "How does strictNullChecks work and how should you handle null and undefined?",
+    "answer": "With it enabled, null and undefined aren't assignable to other types. Handle them with narrowing, optional chaining, nullish coalescing and defaults, and avoid the non-null assertion operator where possible."
+  },
+  {
+    "id": "ts-h01",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "What are conditional types and how does infer work?",
+    "answer": "Conditional types choose a type with T extends U ? X : Y. infer captures a type inside the condition, for example type ReturnType<T> = T extends (...args: any) => infer R ? R : any. They distribute over unions."
+  },
+  {
+    "id": "ts-h02",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "What are mapped types, key remapping and template literal types?",
+    "answer": "Mapped types iterate keys with [K in keyof T]. Key remapping uses as to rename or filter keys, and template literal types build string types, such as `on${Capitalize<K>}`."
+  },
+  {
+    "id": "ts-h03",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "Explain variance, covariance and contravariance, and strictFunctionTypes.",
+    "answer": "Return types are covariant and parameter types are contravariant. With strictFunctionTypes, function parameters are checked contravariantly, which prevents unsound assignments. Method syntax stays bivariant."
+  },
+  {
+    "id": "ts-h04",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "What is structural typing and how can you simulate nominal types?",
+    "answer": "TypeScript compares types by shape, not name. To make types distinct, use branding such as type UserId = string & { __brand: 'UserId' } so similar shapes aren't interchangeable."
+  },
+  {
+    "id": "ts-h05",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "How would you type a type-safe event emitter?",
+    "answer": "Define an event map interface and make the emitter generic: on<K extends keyof E>(event: K, handler: (payload: E[K]) => void). Event names and payload types are then checked together."
+  },
+  {
+    "id": "ts-h06",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "What is module augmentation?",
+    "answer": "Extending existing modules or global types by redeclaring them with declare module or declare global, for example adding properties to Express's Request. It relies on declaration merging."
+  },
+  {
+    "id": "ts-h07",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "What does the satisfies operator do?",
+    "answer": "It checks that a value matches a type without widening its inferred type, so you keep precise literal types while still validating the shape."
+  },
+  {
+    "id": "ts-h08",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "What do project references, incremental builds and isolatedModules help with?",
+    "answer": "Project references split large codebases into separately built projects. incremental caches build info. isolatedModules ensures each file can be transpiled alone, which tools like Babel and esbuild require."
+  },
+  {
+    "id": "ts-h09",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "How do recursive types work and what are their limits?",
+    "answer": "A type can reference itself, such as JSON or nested trees. Very deep recursion can hit compiler limits or slow checking, so tail-recursive conditional types or simpler types help."
+  },
+  {
+    "id": "ts-h10",
+    "topic": "TypeScript",
+    "difficulty": "hard",
+    "text": "How would you implement DeepReadonly and ReturnType from scratch?",
+    "answer": "DeepReadonly maps every key to readonly and recurses when the property is an object: { readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K] }. ReturnType uses a conditional with infer R on the function type."
+  }
+]
