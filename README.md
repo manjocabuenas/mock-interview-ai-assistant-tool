@@ -35,7 +35,9 @@ cd interview-ai-client && ng serve --proxy-config proxy.conf.json    # http://lo
 Audio mode uses the browser Web S
 
 
-RUN
+## 3. RUN
+npm install both /server and /client
+
 cd /server
 ```powershell
 npm run dev 
